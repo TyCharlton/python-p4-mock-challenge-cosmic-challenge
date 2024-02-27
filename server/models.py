@@ -51,6 +51,8 @@ class Mission(db.Model, SerializerMixin):
     name = db.Column(db.String)
 
     # Add relationships
+    scientist_id = db.Column(db.Integer, db.ForeignKey('scientists.id'))
+    planet_id = db.Column(db.Integer, db.ForeignKey('planets.id'))
 
     # Add serialization rules
 
